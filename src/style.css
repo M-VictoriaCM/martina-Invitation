@@ -1,0 +1,266 @@
+@font-face {
+  font-family: 'Albra';
+  src: url('./assets/fonts/Albra-Bold.otf') format('opentype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Albra';
+  src: url('./assets/fonts/Albra-Medium.otf') format('opentype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Albra';
+  src: url('./assets/fonts/Albra-Regular.otf') format('opentype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Albra';
+  src: url('./assets/fonts/Albra-Semi.otf') format('opentype');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Albra';
+  src: url('./assets/fonts/Albra-Light.otf') format('opentype');
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: 'Northwell';
+  src: url('./assets/fonts/Northwell.otf') format('opentype');
+  font-weight: normal;
+}
+
+:root {
+  --color_txt__light: #FFFFFF;
+  --font__principal: 'Northwell', sans-serif;
+  --font__secundaria: 'Albra', sans-serif;
+  --color__principal: #f3bebe;
+  --color__principal_dark: #d38487;
+  --color__shadow: 10px 10px 9px -9px rgba(0, 0, 0, 0.75);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #DDDDDD 0%, #C4C4C4 50%, #DDDDDD 100%);
+  position: relative;
+}
+
+.glitter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 70%);
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  animation: glitter 2s infinite;
+}
+
+
+@keyframes glitter {
+  0% {
+    background-position: 0% 0%;
+  }
+
+  50% {
+    background-position: 100% 100%;
+  }
+
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+/*Card Invitation*/
+.card__info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: .5rem;
+  z-index: 100;
+}
+
+.card__info_icon {
+  width: 30%;
+  text-align: center;
+}
+
+.card__info__txt {
+  width: 70%;
+}
+
+.card__info__txt {
+  font-family: var(--font__secundaria);
+}
+
+.linea-top {
+  border-top: 2px dotted rgb(211, 132, 135);
+}
+
+.card__buttom {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+  padding: .3rem
+}
+
+.card__info__txt__subtitle {
+  margin-top: .5rem;
+  font-size: 12px;
+  text-align: left;
+  font-weight: 500;
+  color: var(--color__principal_dark);
+}
+
+.btn-close:hover,
+.btn-close:focus {
+  outline: none;
+  box-shadow: none;
+  background-color: var(--color__principal_dark);
+  border-radius: 50%;
+}
+
+.btn-close::before {
+  color: #D38487;
+}
+
+/*-----------------------------------------------------------*/
+/*footer*/
+footer {
+  margin: 2rem 0 0;
+  width: 100%;
+  height: 115px;
+  background: var(--color__principal);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.footer__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.img__marca {
+  width: 100px;
+  height: 65px;
+  margin-right: 1rem;
+}
+
+.img__marca1 {
+  width: 45px;
+  height: 45px;
+  margin-left: 1rem;
+}
+
+.footer__txt {
+  margin-top: 1rem;
+  color: white;
+  font-size: larger;
+  font-weight: lighter;
+}
+
+.icon__footer {
+  color: white;
+}
+
+.footer__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 1rem;
+  max-width: 1200px;
+}
+
+/*Estilo del scrollbar*/
+::-webkit-scrollbar {
+  width: .5rem;
+  background-color: var(--color__principal_dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(209, 129, 140);
+  border-radius: 9px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color__principal);
+}
+
+@media(max-width:320px) {
+  .card__info_icon {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .card__info__txt {
+    width: 65%;
+  }
+
+  .card__info_icon {
+    width: 35%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1025px) {
+  .card__info__txt__subtitle {
+    font-size: 1.5rem;
+  }
+
+  .icon-card {
+    text-align: center;
+  }
+
+  .card__info__txt {
+    width: 60%;
+  }
+
+  .card__info_icon {
+    width: 20%;
+  }
+
+  .card__info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .btn-primary {
+    padding: .5rem .6rem;
+    height: 45px;
+    width: 50%;
+    font-size: 14px;
+  }
+}
