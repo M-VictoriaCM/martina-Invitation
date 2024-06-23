@@ -77,11 +77,9 @@ export default {
         </div>
       </fade-in-on-scroll>
       
-      <fade-in-on-scroll>
-        <div class="grid-item redes">
-          <section-redes/>
-        </div>
-      </fade-in-on-scroll>
+      <div class="grid-item redes">
+        <section-redes/>
+      </div>
 
       <button v-if="audioController.isMusicActive()" class="btn btn-secondary btn-stick" @click="toggleMusic">
         <template v-if="audioController.isPlaying()">
