@@ -104,7 +104,7 @@ export default {
                 <span class="counter__label">{{ s }}</span>
             </div>
         </section>
-        <img class="icon__film" src="../assets/img/film-strip-roll1.png" alt="" srcset="">
+        <img class="icon__film" src="../assets/img/film-strip-roll1.png" alt="icon_film_roll">
 
     </div>
 </template>

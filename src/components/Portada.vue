@@ -19,7 +19,7 @@ export default {
         <reflectores-inferiores/>    
         <buttons-portada 
         @music-play="$root.handleMusicPlay" 
-        @music-stop="$root.handleMusicPause" />
+        @music-stop="$root.handleMusicPause"/>
     </div>
 </template>
 

@@ -14,6 +14,7 @@ export default {
             options2: 'No podré asistir',
             inputName: 'Nombre completo:',
             inputTxtArea: 'Información adicional (opcional):',
+            send:'ENVIAR',
             isAttending: '',
             nombre: '',
             informacionAdicional: '',
@@ -93,7 +94,7 @@ export default {
                 </div>
             </div>
             <div class="pop-up-footer">
-                <button type="button" class="btn btn-primary" @click="enviarAWhatsApp">Enviar</button>
+                <button type="button" class="btn btn-primary" @click="enviarAWhatsApp">{{ send }}</button>
             </div>
         </div>
     </div>

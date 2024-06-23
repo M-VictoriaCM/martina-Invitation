@@ -40,7 +40,10 @@
   --font__secundaria: 'Albra', sans-serif;
   --color__principal: #f3bebe;
   --color__principal_dark: #d38487;
+  --color__linea:rgb(0, 0, 0);
   --color__shadow: 10px 10px 9px -9px rgba(0, 0, 0, 0.75);
+  --color__btn:#FFD7D7;
+  --shadow__btn:rgba(255, 215, 215, 0.75);
 }
 
 * {

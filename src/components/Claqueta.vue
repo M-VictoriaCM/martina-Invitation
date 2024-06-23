@@ -26,9 +26,16 @@ export default {
 </template>
 
 <style scoped>
-.home__box1 {
+.home__box1,
+.txt_box1_text,
+.line-container  {
     display: flex;
+}
+.home__box1,
+.line-container{
     justify-content: center;
+}
+.home__box1 {
     align-items: center;
     width: 100%;
     position: relative;
@@ -41,14 +48,14 @@ export default {
 }
 
 .txt_box1_text {
-    position: absolute;
-    width: 80%;
-    height: 100%;
-    color: #fff;
-    display: flex;
     flex-direction: column;
     justify-content: space-between;
     text-align: center;
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    color: var(--color_txt__light);
+    
 }
 
 .txt__subtitle {
@@ -60,18 +67,16 @@ export default {
 }
 
 .line-container {
-    width: 100%;
-    display: flex;
     height: 2px;
-    justify-content: center;
     position: absolute;
+    width: 100%;
     top: 80px;
 }
 
 .horizontal-line {
     width: 80%;
     border: none;
-    border-top: 1px solid white;
+    border-top: 1px solid var(--color_txt__light);
     background-color: transparent;
     margin: none;
 }
@@ -169,6 +174,12 @@ export default {
         font-size: 5rem;
     }
     
+}
+@media (min-width: 1280px) {
+    .home__box1{
+        margin-top:-26%;
+        padding: 1rem 0;
+    }
 }
 
 </style>

@@ -11,9 +11,9 @@ export default {
 
 <template>
     <div class="home__box3">
-        <img src="../assets/img/reflector_der.png" class="reflec1" alt="">
+        <img src="../assets/img/reflector_der.png" class="reflec1" alt="reflectores_derecho">
         <p class="subtitle1">{{ description }}</p>
-        <img src="../assets/img/reflector_izq.png" class="reflec2" alt="" srcset="">
+        <img src="../assets/img/reflector_izq.png" class="reflec2" alt="reflectores_izquierdo">
 
     </div>
 </template>
@@ -76,6 +76,12 @@ export default {
     }
     .subtitle1 {
         font-size: 14px;
+    }
+}
+@media (min-width: 1280px) {
+    .home__box3 {
+        margin-top:-19%;
+        height:30%;
     }
 }
 </style>

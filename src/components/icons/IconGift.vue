@@ -58,7 +58,7 @@ export default {
 
 <style scoped>
 .gift {
-    width: 70px;
+    width: 60px;
     height: 70px;
    overflow: visible;
 }

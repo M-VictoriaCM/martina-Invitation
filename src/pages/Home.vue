@@ -13,7 +13,6 @@ export default {
         function onCountdownFinished() {
             showLoading.value = false;
         }
-
         return {
             showLoading,
             onCountdownFinished
@@ -37,35 +36,36 @@ export default {
 
 
 <style scoped>
-#home {
+#home,
+.main-content,
+.home_container {
     display: flex;
-    justify-content: center;
-    /* Centrado horizontal */
     align-items: center;
     width: 100%;
+}
+
+.main-content,
+.reflect {
+    height: 100%;
+}
+
+#home {
+    justify-content: center;
     height: 100vh;
 }
 
 .main-content {
-    display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: space-between;
-    width: 100%;
-    height: 100%;
 }
 
 .home_container {
-    display: flex;
     flex-direction: row;
     justify-content: center;
-    width: 100%;
-    align-content: center;
 }
 
 .reflect {
     width: 450px;
-    height: 100%;
     position: relative;
     z-index: 2;
     top: 0;
@@ -75,16 +75,13 @@ export default {
     display: none;
 }
 
-/*Mobile */
 @media(max-width:360px) {
-    #home {
+
+    #home,
+    .reflect {
         width: 100%;
     }
-    .reflect{
-        width:100%;
-    }
 }
-/*Extra small*/
 
 @media (min-width: 481px) and (max-width: 767px) {
     .reflect {
@@ -103,7 +100,6 @@ export default {
         z-index: 1;
     }
 }
-
 
 @media (min-width: 768px) and (max-width: 1024px) {
     .reflect {
@@ -126,7 +122,6 @@ export default {
     #home {
         height: 100vh;
     }
-
 
     .reflect {
         display: none;

@@ -32,26 +32,22 @@ export default {
 </template>
 
 <style scoped>
+.card__title,
+.card__description{
+  text-align: center;
+  color: var(--color__principal_dark);
+}
 .card__title{
   font-family: var(--font__secundaria);
   font-size: 2rem;
   font-weight: 700;
-  text-align: center;
-  color: var(--color__principal_dark);
+  
 }
 
 .card__description{
   margin-top: 1rem;
   font-size: 16px;
-  text-align: center;
   font-weight: 500;
-  color: var(--color__principal_dark);
 }
-@media (min-width: 1025px) {
-
-}
-
-
-
 
 </style>

@@ -44,18 +44,19 @@ export default {
 }
 
 .btn-primary {
-  color: #D38487;
+  color: var(--color__principal_dark);
   padding: 5px 10px;
   font-weight: normal;
   cursor: pointer;
-  border-radius: 20px;
-  height: 50px;
+  border-radius: 10px;
+  height: 52px;
   border: none;
   width:100%;
-  background: #FFD7D7;
+  background: var(--color__btn);
   font-family: var(--font__secundaria);
+  font-size:1rem;
   transition: box-shadow 0.3s ease;
-  box-shadow: 0 0 8px 3px rgba(255, 215, 215, 0.75);
+  box-shadow: 0 0 8px 3px var(--shadow__btn);
 }
 
 .btn-primary:focus,
@@ -65,8 +66,8 @@ export default {
 }
 
 .btn-primary:hover {
-  background: #D38487;
-  color: #FFD7D7;
+  background: var(--color__principal_dark);
+  color: var(--color__btn);
 }
 
 .btn1 {
@@ -119,8 +120,13 @@ export default {
   }
 
   .btn-primary:hover {
-    background: #D38487;
-    color: #FFD7D7;
+    background: var( --color__principal_dark);
+    color: var(--color__btn);
+  }
+}
+@media (min-width: 1280px) {
+  .home__box2 {
+    margin-top: -10%;
   }
 }
 </style>

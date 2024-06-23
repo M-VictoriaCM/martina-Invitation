@@ -34,11 +34,13 @@ export default {
 </template>
 
 <style scoped>
+.marco__section-card,
+.section_card-info {
+  display: flex;
+}
+
 .marco__section-card {
   margin-top: 18rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
   width: 320px;
   background: var(--color__principal);
@@ -54,12 +56,13 @@ export default {
   padding: .5rem 0 0;
   border-radius: 9px;
 }
-
-
+.marco__section-card,
 .section_card-info {
-  display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.section_card-info {
   background: var(--color_txt__light);
   width: 280px;
   height: 350px;
@@ -68,8 +71,6 @@ export default {
   overflow: hidden;
   border-radius: 0;
 }
-
-
 
 .card__info__title {
   font-family: var(--font__secundaria);
@@ -106,7 +107,6 @@ export default {
   border-top: none;
   border-bottom: none;
 }
-
 
 .section_card-info .notch {
   position: absolute;

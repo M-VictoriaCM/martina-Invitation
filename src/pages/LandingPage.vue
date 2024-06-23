@@ -89,8 +89,12 @@ export default {
 </template>
 
 <style scoped>
-.container {
+.container,
+.landing__content,
+.grid-item {
   width: 100%;
+}
+.container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -125,11 +129,9 @@ export default {
   display: grid;
   column-gap: 24px;
   grid-template-rows: auto auto 1fr;
-  width: 100%;
 }
 
 .grid-item {
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;

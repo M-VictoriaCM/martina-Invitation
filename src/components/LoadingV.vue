@@ -1,5 +1,4 @@
 <script>
-
 export default {
   name: 'LoadingV',
   data() {
@@ -69,15 +68,30 @@ export default {
 
 <style scoped>
 @import '../style.css';
-
-.app-container {
+.app-container,
+.container,
+.square1,
+.square2,
+.square3,
+.square4,
+.hands  {
   width: 100%;
   height: 100%;
+}
+.app-container,
+.line,
+.preloader{
+  position: fixed;
+}
+.app-container,
+.preloader,
+.film-countdown{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.app-container {  
   background: radial-gradient(grey, rgb(2, 2, 2) 70%);
-  position:fixed;
   top:0;
   left: 0;
   z-index: 100;
@@ -87,52 +101,51 @@ export default {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  width: 100%;
-  height: 100%;
 }
 
 .square1,
-.square2,
-.square3,
-.square4 {
-  width: 100%;
-  height: 100%;
-}
-.square1,
 .square2{
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--color__linea);
 }
 .square3,
 .square4{
-  border-top: 1px solid black;
+  border-top: 1px solid var(--color__linea);
 }
 .square1,
 .square3{
-  border-right: 1px solid black;
+  border-right: 1px solid var(--color__linea);
 }
 .square2,
 .square4{
-  border-left: 1px solid black;
+  border-left: 1px solid var(--color__linea);
 }
-
-.circle {
+.circle,
+.line,
+.hands,
+.hand,
+.needle{
   position: absolute;
+}
+.circle {
   border-radius: 50%;
-  border: 0.1rem solid white;
+  border: 0.1rem solid var(--color_txt__light);
+}
+.circle1,
+.circle2,
+.line {
+  top: 50%;
+  left: 50%;
 }
 
 .circle1,
-.circle2 {
-  top: 50%;
-  left: 50%;
+.circle2,
+.line{
   transform: translate(-50%, -50%);
-  /* position: fixed; */
 }
 
 .circle1 {
   width: 370px;
   height: 370px;
-
 }
 
 .circle2 {
@@ -141,30 +154,17 @@ export default {
 }
 
 .line {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  position: fixed;
   z-index: -1;
 }
 
 .preloader {
-  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* position:fixed */
 }
 
 .film-countdown {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: relative;
   width: 100%;
   z-index: 1;
@@ -172,33 +172,29 @@ export default {
 #count{
   font-size: 250px;
   font-family: var(--font__secundaria);
-  color: rgb(249, 249, 249);
+  color:var(--color_txt__light);
   font-weight: lighter;
   text-align: center;
 }
 .hands {
-  position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
 }
 .hand{
   bottom: 50%;
   left: 50%;
   transform-origin: bottom center;
-  position: absolute;
 }
 .needle {
   background: black;
   height: 100%;
   width: 4px;
   border-radius: 4px;
-  position: absolute;
   z-index: -1;
   transition: transform 1s linear;
 }
 
+/*------------- Medias queries -------------*/
 @media (max-width: 600px)  {
   .app-container {
     height: 100%;
@@ -206,7 +202,9 @@ export default {
 
   .circle1,
   .circle2,
-  .line {
+  .line,
+  .film-countdown,
+  .hands {
     position: fixed;
   }
   .circle1{
@@ -217,23 +215,18 @@ export default {
     width:300px;
     height: 300px;
   }
-
+  .film-countdown,
+  .hands{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 
   .film-countdown {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     font-size: 200px
   }
-
-  .hands {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
 }
+
 @media (min-width: 601px) and (max-width: 1024px) {
   .film-countdown {
     font-size: 200px;

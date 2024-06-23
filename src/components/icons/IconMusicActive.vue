@@ -18,7 +18,6 @@ export default {
 </template>
 
 <style scoped>
-
   .box {
     position: relative;
     width: 50px;
@@ -29,9 +28,14 @@ export default {
     background: var(--color__principal_dark);
     transform: rotate(180deg);
   }
+  .music,
+  .note,
+  .note:before,
+  .note:after{
+    position: absolute;
+  }
 
   .music {
-    position: absolute;
     width: 10%;
     height: 30%;
     background: var(--color_txt__light);
@@ -78,7 +82,6 @@ export default {
   }
 
   .note {
-    position: absolute;
     width: 0;
     top: 100px;
     left: 90px;
@@ -89,7 +92,6 @@ export default {
   
   .note:before {
     content: "♫";
-    position: absolute;
     opacity: 0;
     left: -50px;
     font-size: 40px;
@@ -98,7 +100,6 @@ export default {
   
   .note:after {
     content: "♪";
-    position: absolute;
     opacity: 0;
     left: -50px;
     font-size: 40px;

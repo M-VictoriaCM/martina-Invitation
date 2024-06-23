@@ -9,7 +9,7 @@ export default {
 <template>
     <div>
         <div class="section__timer">
-            <img  class="background_count" src="../assets/img/film1.jpg" alt="" />
+            <img  class="background_count" src="../assets/img/film1.jpg" alt="film" />
             <div class="countdown">
                 <counter :year="2024" :month="8" :date="3" :hour="21" :minute="0" :second="0" :millisecond="31" />
             </div>

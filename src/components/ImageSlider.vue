@@ -4,6 +4,11 @@ import carrusel1 from '../assets/img/carousel1.jpg';
 import carrusel2 from "../assets/img/carousel2.jpg";
 import carrusel3 from "../assets/img/carousel3.jpg";
 import carrusel4 from "../assets/img/carousel4.jpg";
+import carrusel5 from "../assets/img/carousel5.jpg";
+import carrusel6 from "../assets/img/carousel6.jpg";
+import carrusel7 from "../assets/img/carousel7.jpg";
+import carrusel8 from "../assets/img/carousel8.jpg";
+
 export default {
     data() {
     return {
@@ -12,6 +17,10 @@ export default {
         { img: carrusel2 },
         { img: carrusel3 },
         { img: carrusel4 },
+        { img: carrusel5 },
+        { img: carrusel6 },
+        { img: carrusel7 },
+        { img: carrusel8 }
       ],
       isDragStart: false,
       isDragging: false,
@@ -98,19 +107,18 @@ export default {
     margin-top:1.5rem;
     margin-bottom:2.5rem;
     justify-content: center;
+    border:1px solid red;
+    box-shadow: var(--color__shadow);
+    padding:0 1rem;
 
-    border-radius: 9px;
-    
-  
-   
 }
 
 .wrapper {
     display: flex;
-    max-width: 320px;
-    position: relative;
-    box-shadow: var(--color__shadow);
+    width: 100%;
+    position: relative;   
     border-radius: 9px;
+    border:1px solid red;
 }
 
 .wrapper i {
@@ -152,6 +160,7 @@ export default {
 
 .wrapper .carousel {
     font-size: 0px;
+    cursor:pointer;
     white-space: nowrap;
     overflow: hidden;
     scroll-behavior: smooth;
@@ -168,7 +177,7 @@ export default {
     margin-left: 14px;
     object-fit: cover;
     transition: transform 0.5s ease-in-out; 
-    border-radius:9px;
+    border-radius: 9px;
 }
 
 .carousel img:first-child {
@@ -180,14 +189,15 @@ export default {
     }
    
     .carousel img {
-        width: calc(100%/2);
+        width: 100%;
     }
 }
 @media (min-width: 1025px) {
     .contentSlide {
-        padding: 0 35px;
-        padding: 2.5rem  1rem;
+        /* padding: 0 35px; */
+        /* padding: 2.5rem  1rem; */
         margin-bottom:2.5rem;
+        height:auto;
         
     }
 
@@ -197,6 +207,7 @@ export default {
 
     .carousel img {
         width: calc(100%/3);
+        height:400px;
     }
 }
 

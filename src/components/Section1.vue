@@ -37,53 +37,50 @@ export default {
 </template>
 
 <style scoped>
-.section__container {
+.section__container,
+.section__content,
+.section1,
+.section2,
+.section3 {
   display: flex;
+}
+.section__container,
+.section__content,
+.section1,
+.section2,
+.section3{
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 2rem 0 0;
+}
+.section__container,
+.section__content,
+.section1 {
   position:relative;
 }
 
-.section__content {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
-
-.section1,
-.section2 {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.section__container {
+  padding: 2rem 0 0;
 }
 
 .section1 {
-  position: relative;
   z-index: 1;
+}
+.section2,
+.section3{
+  position: absolute;
 }
 
 .section2 {
-  position: absolute;
   top: 205px;
   z-index: 2;
   width: 100%;
 }
 .section3{
-  position: absolute;
   margin-top:36%;
   left: 0;
-  width: 100%;
   z-index: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 @keyframes fade-in {
   0% {
@@ -124,14 +121,15 @@ export default {
   }
 }
 @media (min-width: 1025px) {
-  .section__container {
+  .section__container,
+  .section__content,
+  .section3 {
     width: 100%;
   }
 
   .section__content {
     flex-direction: row;
     justify-content: space-between;
-    width: 100%;
   }
   .section1 {
     width: 55%;
@@ -153,13 +151,9 @@ export default {
     align-items: center;
     left:0;
     margin-top:20%;
-    width:100%;
     height:300px;
     margin-top:3%;
     z-index: -1;
-    
   }
- 
-
 }
 </style>

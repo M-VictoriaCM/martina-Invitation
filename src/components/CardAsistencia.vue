@@ -43,7 +43,7 @@ export default {
 
 <style scoped>
 .btn-primary {
-    color: #D38487;
+    color: var(--color__principal_dark);
     padding: 5px 10px;
     font-weight: normal;
     cursor: pointer;
@@ -51,7 +51,7 @@ export default {
     height: 44px;
     border: none;
     width:100%;
-    background: #FFD7D7;
+    background: var(--color__btn);
     font-family: var(--font__secundaria);
     transition: box-shadow 0.3s ease;
     font-size: 14px;
