@@ -9,6 +9,7 @@ import CardDressCode from '../components/CardDressCode.vue';
 import CardGift from "../components/CardGift.vue";
 import ImageSlider from "../components/ImageSlider.vue";
 import FadeInOnScroll from '../components/FadeInOnScroll.vue';
+import SectionRedes from '../components/SectionRedes.vue';
 
 export default {
   name: "LandingPage",
@@ -20,7 +21,8 @@ export default {
     CardDressCode,
     CardGift,
     ImageSlider,
-    FadeInOnScroll
+    FadeInOnScroll,
+    SectionRedes
   },
   
   setup() {
@@ -74,6 +76,14 @@ export default {
           <card-gift />
         </div>
       </fade-in-on-scroll>
+      <div class="grid-item redes">
+          <section-redes/>
+        </div>
+      <!-- <fade-in-on-scroll>
+        <div class="grid-item">
+          <section-redes/>
+        </div>
+      </fade-in-on-scroll> -->
 
       <button v-if="audioController.isMusicActive()" class="btn btn-secondary btn-stick" @click="toggleMusic">
         <template v-if="audioController.isPlaying()">
@@ -87,7 +97,6 @@ export default {
 
   </div>
 </template>
-
 <style scoped>
 .container,
 .landing__content,
@@ -135,6 +144,13 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+}
+.redes {
+    width: 100%;
+    position:absolute;
+    bottom:0;
+    left:0;
 }
 
 .carousel {

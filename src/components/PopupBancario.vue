@@ -20,9 +20,6 @@ export default {
         }
     },
     methods:{
-        openMap(){
-            window.open(this.mapUrl, '_blank');
-        },
         close(){
             this.$emit('close');
         },

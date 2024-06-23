@@ -50,7 +50,7 @@ export default {
 
 <style scoped>
 .card__gift{
-    margin-bottom:5rem;
+    margin-bottom:40rem;
 }
 .card__title{
   margin-top:1rem;

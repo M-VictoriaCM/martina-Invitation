@@ -66,34 +66,8 @@ html {
 
 body {
   margin: 0;
-  background: linear-gradient(135deg, #DDDDDD 0%, #C4C4C4 50%, #DDDDDD 100%);
+  background: #d5d5d5;
   position: relative;
-}
-
-.glitter {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 70%);
-  mix-blend-mode: overlay;
-  pointer-events: none;
-  animation: glitter 2s infinite;
-}
-
-
-@keyframes glitter {
-  0% {
-    background-position: 0% 0%;
-  }
-
-  50% {
-    background-position: 100% 100%;
-  }
-
-  100% {
-    background-position: 0% 0%;
-  }
 }
 
 /*Card Invitation*/
@@ -156,18 +130,30 @@ footer {
   margin: 2rem 0 0;
   width: 100%;
   height: 115px;
-  background: var(--color__principal);
   position: absolute;
   bottom: 0;
   left: 0;
 }
+.footer__content1{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width:100%;
+  height:300px;
+}
+.box1{
+  margin-top:2rem;
+}
 
 .footer__content {
+  width:100%;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: var(--color__principal);
 }
 
 .img__marca {

@@ -1,11 +1,17 @@
 <script>
+
 export default {
   name: 'App',
   data() {
     return {
       audio: null,
       isPlaying: false,
-      musicActive:false
+      musicActive:false,
+      title:'Martina',
+      subtitle:'MIS 15 AÑOS',
+      opcion1:'CONFIRMAR ASISTENCIA',
+      opcion2:'¿CÓMO LLEGAR?',
+      opcion3:'DATOS BANCARIOS',
     }
   },
   methods: {
@@ -40,7 +46,10 @@ export default {
         this.isPlaying = false;
         this.musicActive = false;
       }
-    }
+    },
+    togglePopUp(){
+            this.popup = !this.popup
+        }
   },
   provide() {
     return {
@@ -65,6 +74,17 @@ export default {
       </section>
     </main>
     <footer v-if="$route.path === '/landing-page'">
+      <div class="footer__content1">
+        <div class="box1">
+         <h1 class="title__footer">{{ title }}</h1>
+         <h2 class="subtitle__footer" >{{ subtitle }}</h2>
+        </div>
+        <div class="box2">
+          <h1 class="opcion__footer" >{{ opcion1 }}</h1>
+          <h1 class="opcion__footer" >{{ opcion2 }}</h1>
+          <h1 class="opcion__footer" >{{ opcion3 }}</h1>
+        </div>
+      </div>
       <div class="footer__content">
         <h4 class="footer__txt">Desarrollado por</h4> 
         <div class="footer__container">
@@ -88,6 +108,29 @@ export default {
 }
 .content {
     grid-column-end: span 4;
+}
+.title__footer{
+  font-size: 100px;
+  font-family: var(--font__principal);
+  color:var( --color__principal_dark);
+  text-align: center;
+  line-height: 70%;
+}
+.subtitle__footer{
+  font-family: var(--font__secundaria);
+  font-size: 32px;
+  font-weight: lighter;
+  color:var( --color_txt__light);
+  text-align: center;
+  line-height: 70%;
+}
+.opcion__footer{
+  font-family: var(--font__secundaria);
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: lighter;
+  color:var( --color__principal_dark);
+  line-height:150%;
 }
 /*------------ MEDIA QUERIES Medium devise and Large devise------------*/
 @media (min-width: 599px) and (max-width: 1023px) {
