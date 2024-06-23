@@ -76,14 +76,12 @@ export default {
           <card-gift />
         </div>
       </fade-in-on-scroll>
-      <div class="grid-item redes">
+      
+      <fade-in-on-scroll>
+        <div class="grid-item redes">
           <section-redes/>
         </div>
-      <!-- <fade-in-on-scroll>
-        <div class="grid-item">
-          <section-redes/>
-        </div>
-      </fade-in-on-scroll> -->
+      </fade-in-on-scroll>
 
       <button v-if="audioController.isMusicActive()" class="btn btn-secondary btn-stick" @click="toggleMusic">
         <template v-if="audioController.isPlaying()">

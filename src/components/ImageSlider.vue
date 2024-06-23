@@ -107,7 +107,6 @@ export default {
     margin-top:1.5rem;
     margin-bottom:2.5rem;
     justify-content: center;
-    border:1px solid red;
     box-shadow: var(--color__shadow);
     padding:0 1rem;
 
@@ -118,7 +117,6 @@ export default {
     width: 100%;
     position: relative;   
     border-radius: 9px;
-    border:1px solid red;
 }
 
 .wrapper i {

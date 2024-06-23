@@ -10,7 +10,7 @@ export default {
         return {
             title: 'Los momentos mágicos merecen ser compartidos con personas especiales.',
             subtitle: 'Compartí tus fotos y videos de ese hermoso día, usando el hashtag',
-            hashTag: "#LosQuinceDeaMarty",
+            hashTag: "#LosQuinceDeMarty",
             copia:'COPIAR #'
         }
     },
