@@ -128,10 +128,15 @@ export default {
     animation-delay: 1s;
 }
 
-
 .heart2 {
     animation: heartAnimation 2s ease-in-out infinite;
     animation-delay: 2s; 
+}
+@media(max-width:320px) {
+    .gift {
+        width: 35px;
+        height: 35px;
+    }
 }
 @media (min-width: 1025px) {
     .gift {

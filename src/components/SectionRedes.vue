@@ -106,7 +106,6 @@ export default {
 
 .custom-shape-divider-top-1719161079 .shape-fill {
     fill: #D5D5D5;
-    stroke-linecap:round red;
 }
 
 .custom-shape-divider-bottom-1719161146 {

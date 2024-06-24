@@ -1,7 +1,14 @@
 <script>
-
+import PopupAsistencia from './components/PopupAsistencia.vue';
+import PopupLocalizacion from './components/PopupLocalizacion.vue';
+import PopupBancario from './components/PopupBancario.vue';
 export default {
   name: 'App',
+  components: { 
+    PopupAsistencia,
+    PopupLocalizacion,
+    PopupBancario
+  },
   data() {
     return {
       audio: null,
@@ -12,6 +19,9 @@ export default {
       opcion1:'CONFIRMAR ASISTENCIA',
       opcion2:'¿CÓMO LLEGAR?',
       opcion3:'DATOS BANCARIOS',
+      showPopupAsistencia: false,
+      showPopupLocalizacion: false,
+      showPopupBancario: false
     }
   },
   methods: {
@@ -22,6 +32,15 @@ export default {
       this.audio.play();
       this.isPlaying = true;
       this.musicActive=true;
+    },
+    togglePopUp(popupType) {
+      if (popupType === 'asistencia') {
+        this.showPopupAsistencia = !this.showPopupAsistencia;
+      } else if (popupType === 'localizacion') {
+        this.showPopupLocalizacion = !this.showPopupLocalizacion;
+      } else if (popupType === 'bancario') {
+        this.showPopupBancario = !this.showPopupBancario;
+      }
     },
     handleMusicPause() {
       if (this.audio) {
@@ -47,9 +66,11 @@ export default {
         this.musicActive = false;
       }
     },
-    togglePopUp(){
-            this.popup = !this.popup
-        }
+    handleVisibilityChange() {
+      if (document.hidden && this.isPlaying) {
+        this.handleMusicPause();
+      }
+    }
   },
   provide() {
     return {
@@ -62,6 +83,18 @@ export default {
         isMusicActive: () => this.musicActive
       }
     };
+  },
+  beforeRouteLeave(to, from, next) {
+    if (this.musicActive) {
+      this.handleMusicStop();
+    }
+    next();
+  },
+  mounted() {
+    document.addEventListener('visibilitychange', this.handleVisibilityChange);
+  },
+  beforeUnmount() {
+    document.removeEventListener('visibilitychange', this.handleVisibilityChange);
   }
 }
 </script>
@@ -80,9 +113,27 @@ export default {
          <h2 class="subtitle__footer" >{{ subtitle }}</h2>
         </div>
         <div class="box2">
-          <h1 class="opcion__footer" >{{ opcion1 }}</h1>
-          <h1 class="opcion__footer" >{{ opcion2 }}</h1>
-          <h1 class="opcion__footer" >{{ opcion3 }}</h1>
+          <div class="card__buttom">
+            <transition name="fade">
+                <popup-asistencia v-show="showPopupAsistencia" @close="togglePopUp('asistencia')"/>
+            </transition>          
+            <h1 class="opcion__footer" @click="togglePopUp('asistencia')">{{ opcion1 }}</h1>
+          </div>
+          <!-------------------------------------------------------------------->
+          <div class="card__buttom">
+            <transition name="fade">
+              <popup-localizacion v-show="showPopupLocalizacion" @close="togglePopUp('localizacion')"/>
+            </transition>          
+            <h1 class="opcion__footer" @click="togglePopUp('localizacion')">{{ opcion2 }}</h1>
+          </div>
+          <!-------------------------------------------------------------------->
+          <div class="card__buttom">
+            <transition name="fade">
+              <popup-bancario v-show="showPopupBancario" @close="togglePopUp('bancario')"/>
+            </transition>          
+            <h1 class="opcion__footer" @click="togglePopUp('bancario')">{{ opcion3 }}</h1>
+          </div>
+          <!-------------------------------------------------------------------->
         </div>
       </div>
       <div class="footer__content">
@@ -132,6 +183,14 @@ export default {
   color:var( --color__principal_dark);
   line-height:150%;
 }
+.opcion__footer {
+    text-decoration: none; /* elimina el subrayado */
+    cursor: pointer;
+}
+
+.opcion__footer:hover {
+    text-decoration: underline; /* subraya el texto al pasar el ratón */
+}
 /*------------ MEDIA QUERIES Medium devise and Large devise------------*/
 @media (min-width: 599px) and (max-width: 1023px) {
   .grid__container {
@@ -153,6 +212,9 @@ export default {
     }
     .content {
         grid-column-end: span 12;
+    }
+    .title__footer{
+      font-size:150px;
     }
 }
 

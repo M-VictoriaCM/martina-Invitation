@@ -34,7 +34,7 @@ export default {
             }
 
             const mensaje = `Nombre: ${this.nombre}\nAsistiré: ${this.isAttending === 'yes' ? 'Sí' : 'No'}\nInformación adicional: ${this.informacionAdicional}`;
-            const telefono = "";
+            const telefono = "2983586371";
             const enlaceWhatsApp = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
 
             Swal.fire({
@@ -259,7 +259,6 @@ input, textarea{
 @media (min-width: 768px) and (max-width: 991px){
     .pop-up-inner{
         width: 70%;
-        border:1px solid red;
     }
     .btn-primary{
         width:60%;
@@ -268,7 +267,6 @@ input, textarea{
 @media (min-width: 1025px) {
     .pop-up-inner{
         width: 50%;
-        border:1px solid red;
     }
     .pop-up-body{
         width:100%;

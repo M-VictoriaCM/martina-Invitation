@@ -156,6 +156,12 @@ export default {
   line-height: 90%;
   text-align: center;
 }
+@media(max-width:320px) {
+  .container__card {
+    width: 260px;
+    height: 420px;
+  }
+}
 
 @media (min-width: 1025px) {
   .container__card {

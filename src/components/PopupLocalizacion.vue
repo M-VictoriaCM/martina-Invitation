@@ -35,7 +35,7 @@ export default {
                 <h1 class="title">{{ modalTitle }}</h1>
                 <div class="modal-body">
                     <div class="map-container">
-                        <iframe
+                        <iframe class="map"
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3142.610837648265!2d-60.1006553241042!3d-38.03285107192159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9592311e20184ea5%3A0x9e747032d11e3a61!2sLa%20Cascada%20Eventos%20Adolfo%20Gonzales%20Chaves!5e0!3m2!1ses-419!2sar!4v1717480729319!5m2!1ses-419!2sar"
                         width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade">
@@ -57,7 +57,7 @@ export default {
     top:0;
     left:0;
     z-index:10;
-    /* padding:32px 16px 120px; */
+    padding:32px 16px 120px;
     height:100vh;
     width:100%;
     background:rgba(0, 0, 0, .6);
@@ -191,6 +191,19 @@ input, textarea{
     display: flex;
     justify-content:center;
 }
+@media(max-width:320px) {
+    .pop-up{
+    }
+    .pop-up-body{
+        height:450px;
+    }
+
+    .map{
+        margin-top:2rem;
+        width:200px;
+    }
+}
+
 @media(max-width:360px) {
     .pop-up-inner{
         width: 100%;

@@ -111,7 +111,7 @@ export default {
         background-image: url('../assets/img/reflectores_superiores.png');
         background-repeat: repeat-x;
         background-size: contain;
-        width: 100vw;
+        width: 100%;
         height: 100vh;
         position: relative;
         z-index: 1;
@@ -134,8 +134,9 @@ export default {
         background-size: contain;
         width: 100vw;
         height: 100vh;
-        position: relative;
+        /* position: relative; */
         z-index: 1;
+        overflow: hidden;
     }
 }
 </style>

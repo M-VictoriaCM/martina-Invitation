@@ -11,6 +11,7 @@ import ImageSlider from "../components/ImageSlider.vue";
 import FadeInOnScroll from '../components/FadeInOnScroll.vue';
 import SectionRedes from '../components/SectionRedes.vue';
 
+
 export default {
   name: "LandingPage",
   components: {
@@ -24,7 +25,6 @@ export default {
     FadeInOnScroll,
     SectionRedes
   },
-  
   setup() {
     const audioController = inject('audioController');
     return { audioController };
@@ -34,10 +34,8 @@ export default {
       if (this.audioController) {
         this.audioController.toggle();
       }
-    },
-    
+    }
   }
-
 };
 </script>
 
@@ -53,7 +51,9 @@ export default {
 
       <fade-in-on-scroll>
         <div class="grid-item">
-          <card-info />
+          <div class="section" id="asistencia">
+            <card-info />
+          </div>
         </div>
       </fade-in-on-scroll>
 
@@ -90,7 +90,6 @@ export default {
         </template>
       </button>
     </div>
-
   </div>
 </template>
 <style scoped>
