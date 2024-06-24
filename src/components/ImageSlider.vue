@@ -168,7 +168,7 @@ export default {
 }
 
 .carousel img {
-    height: 320px;
+    height: 300px;
     width: 100%;
     user-select: none;
     margin-left: 14px;
