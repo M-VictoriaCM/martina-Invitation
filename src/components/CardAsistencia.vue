@@ -12,7 +12,7 @@ export default {
             mostrarModalAsist: false,
             namebtn:'CONFIRMAR ASISTENCIA',
             popup:false,
-            limite:"(Tenes tiempo hasta el 15 de julio)"
+            limite:"(Tenés tiempo hasta el 15 de julio)"
         }
     },
     methods: {
