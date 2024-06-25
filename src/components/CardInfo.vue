@@ -6,7 +6,8 @@ export default {
   name: 'CardInfo',
   components: { 
     CardAsistencia, 
-    CardLocation},
+    CardLocation
+  },
     data(){
       return{
         title:'DATOS DE LA FILMACIÓN'
@@ -24,6 +25,7 @@ export default {
             <div class="notch right-bottom"></div>
             <h1 class="card__info__title">{{ title }}</h1>
             <div class="section_card__content">
+              
               <card-asistencia/>
             </div>
             <div class="section_card__content">
@@ -46,7 +48,7 @@ export default {
   background: var(--color__principal);
   box-shadow: var(--color__shadow);
   border-radius: 9px;
-  height: 380px;
+  height: 450px;
 }
 .section_card__content {
   position: relative;
@@ -65,7 +67,7 @@ export default {
 .section_card-info {
   background: var(--color_txt__light);
   width: 280px;
-  height: 350px;
+  height: 420px;
   padding: 1rem;
   position: relative;
   overflow: hidden;
@@ -136,6 +138,7 @@ export default {
   bottom: -20px;
   right: -20px;
 }
+
 @media(max-width:320px){
   .marco__section-card {
     width:260px;

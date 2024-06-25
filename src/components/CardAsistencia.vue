@@ -11,7 +11,8 @@ export default {
             date: 'Sábado 03 de Agosto 21:00hs',
             mostrarModalAsist: false,
             namebtn:'CONFIRMAR ASISTENCIA',
-            popup:false
+            popup:false,
+            limite:"(Tenes tiempo hasta el 15 de julio)"
         }
     },
     methods: {
@@ -31,12 +32,15 @@ export default {
                 <h3 class="card__info__txt__subtitle">{{ date }}</h3>
             </div>
         </div>
-
+        
         <div class="card__buttom linea-top">
             <transition name="fade">
                 <popup-asistencia v-show="popup" @close="togglePopUp()"/>
-            </transition>          
-            <button class="btn btn-primary" @click="togglePopUp()">{{ namebtn }}</button>
+            </transition> 
+            <div class="card__confirm">
+                <button class="btn btn-primary" @click="togglePopUp()">{{ namebtn }}</button>
+                <p class="card-text">{{ limite }}</p>  
+            </div>
         </div>
     </div>
 </template>
@@ -53,8 +57,8 @@ export default {
     width:100%;
     background: var(--color__btn);
     font-family: var(--font__secundaria);
-    transition: box-shadow 0.3s ease;
     font-size: 14px;
+    transition: box-shadow 0.3s ease;
   }
   
   .btn-primary:focus,
@@ -66,5 +70,16 @@ export default {
     background: var(--color__principal_dark);
     color: var(--color__principal);
   }
+  .card__confirm{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+  }
+  .card-text{
+  font-family: var(--font__secundaria);
+  color: var(--color__principal_dark);
+  font-size: 14px;
+  text-align: center;
+}
   
 </style>
