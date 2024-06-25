@@ -1,13 +1,11 @@
 <script>
-import ClaquetaImage from '../assets/img/claqueta_marti(copia).webp';
 export default {
     name:'Claqueta',
     data() {
         return {
             subtitle: 'SE APROXIMA LA FILMACIÓN DE',
             title_principal: "Martina's version",
-            title: 'XV',
-            ClaquetaImage
+            title: 'XV'
            
         }
     }
@@ -15,7 +13,7 @@ export default {
 </script>
 <template>
     <div class="home__box1">
-            <img v-lazy="ClaquetaImage" class="claqueta" alt="claqueta">
+            <img src="../assets/img/claqueta_marti(copia).webp" class="claqueta" alt="claqueta">
             <div class="txt_box1_text">
                 <p class="txt__subtitle">{{ subtitle }}</p>
                 <div class="line-container">
@@ -28,16 +26,9 @@ export default {
 </template>
 
 <style scoped>
-.home__box1,
-.txt_box1_text,
-.line-container  {
-    display: flex;
-}
-.home__box1,
-.line-container{
-    justify-content: center;
-}
 .home__box1 {
+    display: flex;
+    justify-content: center;
     align-items: center;
     width: 100%;
     position: relative;
@@ -50,14 +41,14 @@ export default {
 }
 
 .txt_box1_text {
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
     position: absolute;
     width: 80%;
     height: 100%;
-    color: var(--color_txt__light);
-    
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
 }
 
 .txt__subtitle {
@@ -69,16 +60,18 @@ export default {
 }
 
 .line-container {
-    height: 2px;
-    position: absolute;
     width: 100%;
+    display: flex;
+    height: 2px;
+    justify-content: center;
+    position: absolute;
     top: 80px;
 }
 
 .horizontal-line {
     width: 80%;
     border: none;
-    border-top: 1px solid var(--color_txt__light);
+    border-top: 1px solid white;
     background-color: transparent;
     margin: none;
 }
@@ -147,15 +140,9 @@ export default {
         font-size: 5rem;
     }
 }
-@media (min-width: 1022px) {
-    .home__box1{
-        margin-top:-65%;
-    }
-}
-
 @media (min-width: 1025px) {
     .home__box1{
-        margin-top:-55%;
+        margin-top:-18%;
         padding: 1rem 0;
     }
     .claqueta {
@@ -182,12 +169,6 @@ export default {
         font-size: 5rem;
     }
     
-}
-@media (min-width: 1280px) {
-    .home__box1{
-        margin-top:-26%;
-        padding: 1rem 0;
-    }
 }
 
 </style>
