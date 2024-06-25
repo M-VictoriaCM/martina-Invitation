@@ -1,10 +1,12 @@
 <script>
+import PopupBase from './PopupBase.vue';
 import Swal from 'sweetalert2';
 import IconGift from './icons/IconGift.vue';
 
 export default {
     name: 'CardBancario',
     components: {
+        PopupBase,
         IconGift
     },
     data() {
@@ -20,9 +22,6 @@ export default {
         }
     },
     methods: {
-        close() {
-            this.$emit('close');
-        },
         copyToClipboard(text) {
             const el = document.createElement('textarea');
             el.value = text;
@@ -43,120 +42,48 @@ export default {
 </script>
 
 <template>
-    <div class="pop-up">
-        <div class="pop-up-inner">
-            <div class="pop-up-close" @click="close()">
-                <i class="fa-solid fa-xmark icon__close"></i>
+    <popup-base :title="title" >
+        <template #icon>
+            <div class="circle">
+                <icon-gift class="icon__circle"/>
             </div>
-            <!--Body-->
-            <div class="pop-up-body">
-                <div class="circle">
-                    <icon-gift class="icon__circle" />
-                </div>
-                <h1 class="title">{{ title }}</h1>
-                <span class="block__text">
-                    <h3 class="title__section">TITULAR:</h3>
-                    <p class="text__section">{{ name }}</p>
-                </span>
-                <span class="block__text">
-                    <h3 class="title__section">CVU:</h3>
-                    <p class="text__section">{{ cvu }}</p>
-                </span>
-                <span class="block__text">
-                    <h3 class="title__section">ALIAS:</h3>
-                    <p class="text__section">{{ alias }}</p>
-                </span>
-                <span class="block__text">
-                    <h3 class="title__section">CUIT/CUIL</h3>
-                    <p class="text__section">{{ datos }}</p>
-                </span>
-                <span class="block__text">
-                    <h3 class="title__section">CUENTA:</h3>
-                    <p class="text__section">{{ cuenta }}</p>
-                </span>
-
-            </div>
-            <div class="pop-up-footer">
-                <button type="button" class="btn btn-primary" @click="copyToClipboard(cvu)">{{ send1 }}</button>
-                <button type="button" class="btn btn-primary" @click="copyToClipboard(alias)">{{ send2 }}</button>
-            </div>
+        </template>
+        <div class="modal-body">
+            <span class="block__text">
+                <h3 class="title__section">TITULAR:</h3>
+                <p class="text__section">{{ name }}</p>
+            </span>
+            <span class="block__text">
+                <h3 class="title__section">CVU:</h3>
+                <p class="text__section">{{ cvu }}</p>
+            </span>
+            <span class="block__text">
+                <h3 class="title__section">ALIAS:</h3>
+                <p class="text__section">{{ alias }}</p>
+            </span>
+            <span class="block__text">
+                <h3 class="title__section">CUIT/CUIL</h3>
+                <p class="text__section">{{ datos }}</p>
+            </span>
+            <span class="block__text">
+                <h3 class="title__section">CUENTA:</h3>
+                <p class="text__section">{{ cuenta }}</p>
+            </span>
         </div>
-    </div>
+        <div class="pop-up-footer">
+            <button type="button" class="btn btn-primary" @click="copyToClipboard(cvu)">{{ send1 }}</button>
+            <button type="button" class="btn btn-primary" @click="copyToClipboard(alias)">{{ send2 }}</button>
+        </div>
+    </popup-base>
 </template>
 
 <style scoped>
-.pop-up {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    padding: 32px 16px 120px;
-    height: 100vh;
-    width: 100%;
-    background: rgba(0, 0, 0, .6);
-    display: grid;
-    place-items: center;
-}
-
-.icon__close {
-    position: absolute;
-    height: 52px;
-    width: 52px;
-    display: flex;
-    border-radius: 50%;
-    padding: .5rem;
-    margin: .5rem;
-    justify-content: center;
-    align-items: center;
-    top: 0;
-    right: 0;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: black;
-}
-
-.pop-up-inner {
-    background-color: #fff;
-    color: black;
-    position: relative;
-    padding: 40px;
-    border-radius: 9px;
-    width: 95%;
-    box-shadow: var(--shadow);
-    transition: all 250ms ease-in-out
-}
-
-.fade-enter .pop-up-inner,
-.fade-leave-to .pop-up-inner {
-    opacity: 0;
-    transform: translateY(-32px);
-}
-
-.fade-enter-active,
-.fade-leave-active {
-    transition: all 250ms ease-in-out
-}
-
-.fade-leave-active {
-    transition-delay: 250ms;
-}
-
-.pop-up-body {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-}
-
 .circle {
     width: 95px;
     height: 95px;
     border-radius: 50%;
-    background: #FEFEFE;
-    border: 1px solid #D38487;
+    background:var(--color__circle);
+    border: 1px solid var(--color__principal_dark);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -167,15 +94,6 @@ export default {
     width: 100%;
     display: flex;
     justify-content: center;
-}
-
-.title {
-    font-family: var(--font__secundaria);
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: var(--color__principal_dark);
-    text-align: center;
-    margin: 1rem 0;
 }
 
 .block__text {
@@ -200,23 +118,16 @@ export default {
     line-height: 100%;
 }
 
-.pop-up-footer {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
 .btn-primary {
-    color: #D38487;
-    /* padding:  2px; */
+    color: var(--color__principal_dark);
     font-weight: normal;
     cursor: pointer;
     border-radius: 10px;
     height: 44px;
     width: 100%;
     border: none;
-    background: #FFD7D7;
+    background: var(--color__btn);
     font-family: var(--font__secundaria);
     font-size: 16px;
     margin-bottom: .5rem;
@@ -228,8 +139,8 @@ export default {
 }
 
 .btn-primary:hover {
-    background: #D38487;
-    color: #FEFEFE;
+    background: var(--color__principal_dark);
+    color: var(--color__btn);
 }
 
 .btn-close:hover,
@@ -241,7 +152,13 @@ export default {
 }
 
 .btn-close::before {
-    color: #D38487;
+    color: var(--color__principal_dark);
+}
+.pop-up-footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 @media(max-width:320px) {

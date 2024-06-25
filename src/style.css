@@ -35,6 +35,7 @@
 }
 
 :root {
+  --color__background:#d5d5d5;
   --color_txt__light: #FFFFFF;
   --font__principal: 'Northwell', sans-serif;
   --font__secundaria: 'Albra', sans-serif;
@@ -44,6 +45,7 @@
   --color__shadow: 10px 10px 9px -9px rgba(0, 0, 0, 0.75);
   --color__btn:#FFD7D7;
   --shadow__btn:rgba(255, 215, 215, 0.75);
+  --color__circle:#FEFEFE;
 }
 
 * {
@@ -66,7 +68,7 @@ html {
 
 body {
   margin: 0;
-  background: #d5d5d5;
+  background: var(--color__background);
   position: relative;
 }
 
@@ -94,7 +96,7 @@ body {
 }
 
 .linea-top {
-  border-top: 2px dotted rgb(211, 132, 135);
+  border-top: 2px dotted var(--color__principal_dark);
 }
 
 .card__buttom {

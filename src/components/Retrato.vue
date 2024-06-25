@@ -1,13 +1,19 @@
 <script>
+import CardPhoto from '../assets/img/foto_card.webp';
 export default {
-    name:'Retrato'
+    name:'Retrato',
+    data(){
+      return{
+        CardPhoto
+      }
+    }
 }
 </script>
 
 <template>
     <div>
         <div class="section_photo">
-          <img class="photo_card" src="../assets/img/foto_card.jpg" alt="foto_marti" />
+          <img class="photo_card" v-lazy="CardPhoto" alt="foto_marti" />
           <div class="overlay"></div>
         </div>
     </div>

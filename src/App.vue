@@ -27,7 +27,7 @@ export default {
   methods: {
     async handleMusicPlay() {
       if (!this.audio) {
-        this.audio = new Audio((await import('./assets/music/TaylorSwift_CruelSummer.mp3')).default);
+        this.audio = new Audio((await import('./assets/music/Taylor-Swift_Fifteen.mp3')).default);
       }
       this.audio.play();
       this.isPlaying = true;

@@ -3,10 +3,17 @@ import { ref } from 'vue';
 import LoadingV from '../components/LoadingV.vue';
 import Portada from '../components/Portada.vue';
 import FilmDinamic from '../components/FilmDinamic.vue';
+import ReflectoresSuperiores from '../assets/img/reflectores_superiores.webp';
 
 export default {
     name: 'Home',
     components: { LoadingV, FilmDinamic, Portada },
+    data(){
+        return{
+            ReflectoresSuperiores,
+            animate:false
+        }
+    },
     setup() {
         const showLoading = ref(true);
 
@@ -25,11 +32,13 @@ export default {
         <loading-v v-if="showLoading" @countdown-finished="onCountdownFinished"></loading-v>
         <div v-else class="main-content">
             <film-dinamic class="film1" />
-            <div class="home_container">
+            <div class="home_container" :class="{'fade-in': animate}">
                 <div class="img__reflect"></div>
-                <img class="reflect" src="../assets/img/reflectores_superiores.png" alt="reflectores_superiores">
+                <img class="reflect" v-lazy="ReflectoresSuperiores" alt="reflectores_superiores">
             </div>
-            <portada></portada>
+            <div :class="{ 'fade-in': animate }">
+                <portada></portada>
+            </div>
         </div>
     </div>
 </template>
@@ -74,6 +83,18 @@ export default {
 .img__reflect {
     display: none;
 }
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
 
 @media(max-width:360px) {
 
@@ -90,7 +111,7 @@ export default {
 
     .img__reflect {
         display: block;
-        background-image: url('../assets/img/reflectores_superiores.png');
+        background-image: url('../assets/img/reflectores_superiores.webp');
         background-repeat: repeat-x;
         background-size: contain;
         width: 100%;
@@ -108,13 +129,26 @@ export default {
 
     .img__reflect {
         display: block;
-        background-image: url('../assets/img/reflectores_superiores.png');
+        background-image: url('../assets/img/reflectores_superiores.webp');
         background-repeat: repeat-x;
         background-size: contain;
         width: 100%;
         height: 100vh;
         position: relative;
         z-index: 1;
+    }
+}
+@media (min-width: 1022px) {
+    .reflect {
+        display: none;
+    }
+
+    .img__reflect {
+        display: block;
+        background-image: url('../assets/img/reflectores_superiores2.webp');
+        background-repeat: repeat-x;
+        background-size: contain;
+        width: 100vw;
     }
 }
 
@@ -129,7 +163,7 @@ export default {
 
     .img__reflect {
         display: block;
-        background-image: url('../assets/img/reflectores_superiores2.png');
+        background-image: url('../assets/img/reflectores_superiores2.webp');
         background-repeat: repeat-x;
         background-size: contain;
         width: 100vw;

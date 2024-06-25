@@ -117,7 +117,6 @@ export default {
   .section3{
     margin-top: 38%;
     padding: 0 0 2.5rem;
-    border:1px solid red;
   }
 }
 @media (min-width: 1025px) {

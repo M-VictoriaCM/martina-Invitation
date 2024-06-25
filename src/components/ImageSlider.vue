@@ -1,13 +1,13 @@
 <script>
 //Imágenes
-import carrusel1 from '../assets/img/carousel1.jpg';
-import carrusel2 from "../assets/img/carousel2.jpg";
-import carrusel3 from "../assets/img/carousel3.jpg";
-import carrusel4 from "../assets/img/carousel4.jpg";
-import carrusel5 from "../assets/img/carousel5.jpg";
-import carrusel6 from "../assets/img/carousel6.jpg";
-import carrusel7 from "../assets/img/carousel7.jpg";
-import carrusel8 from "../assets/img/carousel8.jpg";
+import carrusel1 from '../assets/img/carousel1.webp';
+import carrusel2 from "../assets/img/carousel2.webp";
+import carrusel3 from "../assets/img/carousel3.webp";
+import carrusel4 from "../assets/img/carousel4.webp";
+import carrusel5 from "../assets/img/carousel5.webp";
+import carrusel6 from "../assets/img/carousel6.webp";
+import carrusel7 from "../assets/img/carousel7.webp";
+import carrusel8 from "../assets/img/carousel8.webp";
 
 export default {
     data() {
@@ -78,7 +78,7 @@ export default {
       if (!this.isDragging) return;
       this.isDragging = false;
       this.autoSlide();
-    },
+    }
   },
   mounted() {
     this.showHideIcons();
@@ -92,7 +92,12 @@ export default {
             <i ref="left" id="left" @click="scroll('left')" class="fa-solid fa-chevron-left"></i>
             <div class="carousel" ref="carousel" @mousedown="dragStart" @touchstart="dragStart" @mousemove="dragging"
                 @touchmove="dragging" @mouseup="dragStop" @mouseleave="dragStop" @touchend="dragStop">
-                <img v-for="(image, index) in images" :key="index" :src="image.img" alt="" draggable="false">
+                <img 
+                v-for="(image, index) in images" 
+                :key="index" 
+                v-lazy="image.img"
+                alt="" 
+                draggable="false">
             </div>
             <i ref="right" id="right" @click="scroll('right')" class="fa-solid fa-chevron-right icon"></i>
         </div>
@@ -191,8 +196,6 @@ export default {
 }
 @media (min-width: 1025px) {
     .contentSlide {
-        /* padding: 0 35px; */
-        /* padding: 2.5rem  1rem; */
         margin-bottom:2.5rem;
         height:auto;
         
@@ -207,15 +210,4 @@ export default {
         height:400px;
     }
 }
-
-/* @media screen and (max-width:900px){
-    .carousel img{
-        width:calc(100%/2);
-    }
-}
-@media screen and (max-width:550px){
-    .carousel img{
-        width:100%;
-    }
-} */
 </style>

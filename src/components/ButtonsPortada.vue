@@ -91,6 +91,14 @@ export default {
     width:60%;
 }
 }
+@media (min-width: 1022px) {
+  .home__box2 {
+    margin-top: -7%;
+    height: 50px;
+    width: 50%;
+  }
+}
+
 @media (min-width: 1025px) {
   .home__box2 {
     margin-top: -6%;

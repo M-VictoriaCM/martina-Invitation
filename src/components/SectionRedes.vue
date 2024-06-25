@@ -10,7 +10,7 @@ export default {
         return {
             title: 'Los momentos mágicos merecen ser compartidos con personas especiales.',
             subtitle: 'Compartí tus fotos y videos de ese hermoso día, usando el hashtag',
-            hashTag: "#LosQuinceDeMarty",
+            hashTag: "#MXV",
             copia:'COPIAR #'
         }
     },
@@ -157,7 +157,7 @@ export default {
    font-size: 1rem;
 }
 .btn-primary {
-    color: #D38487;
+    color: var(--color__principal_dark);
     /* padding:  2px; */
     font-weight: normal;
     cursor: pointer;
@@ -165,7 +165,7 @@ export default {
     height: 44px;
     width: 80%;
     border: none;
-    background: #FFD7D7;
+    background: var(--color__btn);
     font-family: var(--font__secundaria);
     font-size: 16px;
     margin-bottom:.5rem;
@@ -177,8 +177,8 @@ export default {
 }
 
 .btn-primary:hover {
-    background: #D38487;
-    color: #FEFEFE; 
+    background: var(--color__principal_dark);
+    color:var(--color__circle); 
 }
 
 .btn-close:hover,
@@ -190,7 +190,7 @@ export default {
 }
 
 .btn-close::before {
-    color: #D38487;
+    color: var(--color__principal_dark);
 }
 @media (min-width: 1025px) {
    

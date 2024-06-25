@@ -1,9 +1,13 @@
 <script>
+import ReflectorDerechoImg from '../assets/img/reflector_der.webp';
+import ReflectorIzquierdoImg from '../assets/img/reflector_izq.webp';
 export default {
     name: 'ReflectoresInferiores',
     data() {
         return {
-             description: 'La música de fondo es parte de la experiencia.'
+             description: 'La música de fondo es parte de la experiencia.',
+             ReflectorDerechoImg,
+             ReflectorIzquierdoImg
         }
     }
 }
@@ -11,9 +15,9 @@ export default {
 
 <template>
     <div class="home__box3">
-        <img src="../assets/img/reflector_der.png" class="reflec1" alt="reflectores_derecho">
+        <img v-lazy="ReflectorDerechoImg" class="reflec1" alt="reflectores_derecho">
         <p class="subtitle1">{{ description }}</p>
-        <img src="../assets/img/reflector_izq.png" class="reflec2" alt="reflectores_izquierdo">
+        <img v-lazy="ReflectorIzquierdoImg" class="reflec2" alt="reflectores_izquierdo">
 
     </div>
 </template>
@@ -62,6 +66,8 @@ export default {
         width:60%;
     }
 }
+
+
 @media (min-width: 1025px) {
     .home__box3 {
         margin-top:-14%;

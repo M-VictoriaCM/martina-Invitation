@@ -1,15 +1,21 @@
 <script>
 import Counter from '../components/Counter.vue';
+import FilmBackground from '../assets/img/film1.webp';
 export default {
     name: 'Timer',
-    components: { Counter }
+    components: { Counter },
+    data(){
+        return{
+            FilmBackground
+        }
+    }
 };
 </script> 
 
 <template>
     <div>
         <div class="section__timer">
-            <img  class="background_count" src="../assets/img/film1.jpg" alt="film" />
+            <img  class="background_count" v-lazy="FilmBackground" alt="film" />
             <div class="countdown">
                 <counter :year="2024" :month="8" :date="3" :hour="21" :minute="0" :second="0" :millisecond="31" />
             </div>

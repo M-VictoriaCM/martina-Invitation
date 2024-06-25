@@ -1,11 +1,13 @@
 <script>
+import ClaquetaImage from '../assets/img/claqueta_marti(copia).webp';
 export default {
     name:'Claqueta',
     data() {
         return {
             subtitle: 'SE APROXIMA LA FILMACIÓN DE',
             title_principal: "Martina's version",
-            title: 'XV'
+            title: 'XV',
+            ClaquetaImage
            
         }
     }
@@ -13,7 +15,7 @@ export default {
 </script>
 <template>
     <div class="home__box1">
-            <img src="../assets/img/claqueta_marti(copia).png" class="claqueta" alt="claqueta">
+            <img v-lazy="ClaquetaImage" class="claqueta" alt="claqueta">
             <div class="txt_box1_text">
                 <p class="txt__subtitle">{{ subtitle }}</p>
                 <div class="line-container">
@@ -145,9 +147,15 @@ export default {
         font-size: 5rem;
     }
 }
+@media (min-width: 1022px) {
+    .home__box1{
+        margin-top:-65%;
+    }
+}
+
 @media (min-width: 1025px) {
     .home__box1{
-        margin-top:-18%;
+        margin-top:-55%;
         padding: 1rem 0;
     }
     .claqueta {

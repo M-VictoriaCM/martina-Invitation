@@ -1,4 +1,5 @@
 <script>
+import IconFilm from '../assets/img/film-strip-roll1.webp';
 export default {
     name: 'Counter',
     props: ['year', 'month', 'date', 'hour', 'minute', 'second', 'millisecond'],
@@ -15,7 +16,8 @@ export default {
             m:"Minutos",
             s:"Segundos",
             title:"La filmación comienza en:",
-            title1:"LLegó el día"
+            title1:"LLegó el día",
+            IconFilm
         };
     },
     computed: {
@@ -104,7 +106,7 @@ export default {
                 <span class="counter__label">{{ s }}</span>
             </div>
         </section>
-        <img class="icon__film" src="../assets/img/film-strip-roll1.png" alt="icon_film_roll">
+        <img class="icon__film" v-lazy="IconFilm" alt="icon_film_roll">
 
     </div>
 </template>
