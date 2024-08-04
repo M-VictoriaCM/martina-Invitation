@@ -84,7 +84,7 @@ export default {
     <div v-if="loaded" class="container">
         <section class="title__counter">
             <h3 v-show="!expired" class="counter__txt" >{{ title }}</h3>
-            <p v-show="expired">{{ title1 }}</p>
+            <h3 v-show="expired" class="counter__txt" >{{ title1 }}</h3>
         </section>
         
         <section class="counter__container">

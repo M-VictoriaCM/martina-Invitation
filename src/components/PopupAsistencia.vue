@@ -36,7 +36,7 @@ export default {
             }
 
             const mensaje = `Nombre: ${this.nombre}\nAsistiré: ${this.isAttending === 'yes' ? 'Sí' : 'No'}\nInformación adicional: ${this.informacionAdicional}`;
-            const telefono = "2983565147";
+            const telefono = "0";
             const enlaceWhatsApp = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
 
             Swal.fire({
